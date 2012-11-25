@@ -6,9 +6,9 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
-
-gem "haml-rails"
+# gem 'sqlite3'
+# gem 'mysql2'
+# gem 'pg'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -20,6 +20,7 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+  gem 'i18n-js'
 end
 
 gem 'jquery-rails'
@@ -39,12 +40,15 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'debugger'
 
-gem "pjax_rails"
-gem "heroku"
-gem "foreman"
-gem "will_paginate", '~> 3.0'
-gem "rails_autolink"
-gem "newrelic_rpm"
+gem 'pjax_rails'
+gem 'heroku'
+gem 'foreman'
+gem 'thin'
+gem 'will_paginate', '~> 3.0'
+gem 'rails_autolink'
+gem 'newrelic_rpm'
+gem 'haml-rails'
+gem 'devise'
 
 group :development do
   gem 'rspec-rails'
