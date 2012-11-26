@@ -1,0 +1,34 @@
+= form_for @item, :as => :item, :url => url, :remote => true do |f|
+  = render "/shared/errors", :errors => @item.errors.full_messages
+  .form-cont
+    .f-row
+      %span.caption
+        = f.caption :title, true
+        \:
+      = f.text_field :title, :class => "f-input"
+    - unless @item.new_record?
+      %hr.separator/
+      .row
+        %span.caption
+          = f.caption :boards_count
+          \:
+        / = link_to t("boards.count", :count => @item.boards_count), { :controller => :boards, :item_id => @item }, :class => "link"
+      %hr.separator/
+      .f-row
+        %span.caption
+          = f.caption :created_at
+          \:
+        = l(@item.created_at, :format => :date) rescue nil
+      .f-row
+        %span.caption
+          = f.caption :updated_at
+          \:
+        = l(@item.updated_at, :format => :date) rescue nil
+    .f-row
+      %span.fl
+        = f.submit t("common.buttons.save"), :class => "button"
+        = link_to t("common.buttons.cancel"), "javascript:;", :class => "button", :onclick => "UI.Sections.closeForm();"
+      - unless @item.new_record?
+        %span.fr
+          = link_to t("common.buttons.destroy"), "javascript:;", :class => "button red", :onclick => "UI.Sections.destroy('#{url_for(:action => :destroy, :id => @item)}');"
+      %span.cc

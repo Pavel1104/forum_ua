@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 class ApplicationController < ActionController::Base
+  before_filter :set_page_title,  :only => :index
   helper :all
   protect_from_forgery
 
-  def home
-    @page_title = "Home Forum_ua"
+  def index
+    # :set_page_title
+    # @page_title = "Home Forum_ua"
     @breadcrumbs = nil
     render :template => "/shared/home"
   end
@@ -13,6 +15,12 @@ class ApplicationController < ActionController::Base
     Rails.env.development?
   end
   helper_method :debug_assets?
+
+  def current_location_params(options = {})
+    p = request.get? ? Hash.new.update(request.params).symbolize_keys! : {}
+    p.update(options)
+  end
+  helper_method :current_location_params
 
     private
 
@@ -46,7 +54,7 @@ class ApplicationController < ActionController::Base
 
   def set_breadcrumbs
     @breadcrumbs = []
-    @breadcrumbs << { :name => t("home", :scope => ["admin/common", "title"]), :href => root_path }
+    @breadcrumbs << { :name => t("home", :scope => ["common", "title"]), :href => root_path }
     @breadcrumbs << { :name => t("index", :scope => [params[:controller], "title"]), :href => { :action => :index } }
   end
 

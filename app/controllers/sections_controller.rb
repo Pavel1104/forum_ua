@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 class SectionsController < ApplicationController
   before_filter :set_breadcrumbs, :only => :index
-  # before_filter :find_item, :only => [:show, :edit, :update, :destroy]
-  # before_filter :set_page_title,  :only => :index
+  before_filter :find_item, :only => [:show, :edit, :update, :destroy]
 
   def index
     @fields = resource_class::FIELDS_FOR_LIST.dup
@@ -13,6 +12,7 @@ class SectionsController < ApplicationController
 
   def new
     @item = resource_class.new
+    render :layout => false
   end
 
   def create
@@ -21,9 +21,12 @@ class SectionsController < ApplicationController
   end
 
   def show
+    edit
+    render :edit
   end
 
   def edit
+    render :layout => false
   end
 
   def update

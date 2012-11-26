@@ -1,0 +1,10 @@
+# -*- coding: utf-8 -*-
+ua:
+  application:
+    title:
+      index: "Головна сторынка Forum_UA"
+
+  menu:
+    home: "Головна"
+    sections: "Розділи"
+    users: "Користувачі"

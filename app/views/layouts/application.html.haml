@@ -2,8 +2,19 @@
 %html
   %head
     %title ForumUa
-    = stylesheet_link_tag    "application", :media => "all"
-    = javascript_include_tag "application"
+    = stylesheet_link_tag    "application", :media => "all", :debug => debug_assets?
+    = javascript_include_tag "application", :debug => debug_assets?
     = csrf_meta_tags
+    = render "shared/head_scripts"
+    = yield(:head_scripts)
   %body
-    = yield
+    #wrap
+      #cont
+        #header
+          .fl
+            = render "shared/menu", :css_class => "menu-h-d"
+          .fr
+            \ 
+          .cc
+        %div{"data-pjax-container" => "true"}
+          = yield

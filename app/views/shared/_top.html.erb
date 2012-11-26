@@ -1,0 +1,18 @@
+
+<div class="breadcrumbs">
+	<% unless @breadcrumbs.blank? %>
+		<%= breadcrumbs(@breadcrumbs) %>
+	<% end %>
+</div>
+
+
+<% unless @page_title.blank? %>
+	<h1 class="page-title">
+		<%= @page_title %>
+		<div class="pjax-loading"></div>
+	</h1>
+<% end %>
+
+<div id="flash">
+	<%= render "/shared/flash", :flash => flash %>
+</div>

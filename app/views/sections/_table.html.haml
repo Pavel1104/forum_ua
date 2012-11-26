@@ -1,0 +1,29 @@
+- unless @collection.blank?
+  %table.list-items
+    %thead
+      %tr
+        %th.a-center.item-actions-1= check_box_tag("select-all", nil, false, :id => nil, :"data-action" => "select-all", :title => t("common.buttons.select_all"))
+        - @fields.each do |field|
+          - css_class = is_ordered_by?(field) ? 'ordered-by' : ''
+          %th{:class => css_class}= order resource_class, :by => field
+        %th  
+    %tbody
+      - @collection.each_with_index do |item, index|
+        %tr{:class => index % 2 == 0 ? 'even' : 'odd', "data-id" => item.id}
+          %td.a-center.item-actions-1= check_box_tag("id[]", item.id, false, :id => nil, :"data-action" => "select")
+          - @fields.each do |field|
+            - css_class = []
+            - css_class << 'a-center' if [:id, :created_at, :updated_at].include?(field)
+            - css_class << 'ordered-by' if is_ordered_by?(field)
+            - css_classes = css_class.join(" ")
+            - if [:created_at, :updated_at].include?(field)
+              %td{:class => css_classes}= l(item.send(field), :format => :date) rescue nil
+            - elsif [:title].include?(field)
+              %td{:class => css_classes}= auto_link(item.send(field), :html => { :class => "link" })
+            - else
+              %td{:class => css_classes}= item.send(field) rescue nil
+          %td.item-actions-1
+            = icon_link "pencil", nil, nil, :title => t("common.buttons.edit"), :onclick => "UI.Sections.form('#{item.id}', '#{url_for(:action => :edit, :id => item)}');"
+    %table
+      %p
+        %b= icon_link "delete", t("common.buttons.destroy_selected"), nil, :onclick => "UI.Sections.destroySelected();"

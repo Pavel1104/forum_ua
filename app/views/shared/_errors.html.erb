@@ -1,0 +1,16 @@
+
+<% unless errors.blank? %>
+	<% if errors.length > 1 %>
+		<div id="errorExplanation">
+			<ul>
+				<% errors.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% else %>
+		<div class="flash_alert">
+			<%= errors.first %>
+		</div>
+	<% end %>
+<% end %>

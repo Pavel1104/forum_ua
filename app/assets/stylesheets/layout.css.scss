@@ -1,10 +1,11 @@
 
 html body {
-	background-color: #4b7399;
+	background-color: #6bf;
 	font-family: 'lucida grande', tahoma, verdana, arial, sans-serif;
-	font-size: 10px;
-	line-height: 13px;
+	font-size: 16px;
+	line-height: 20px;
 	height: 100%;
+  margin: 20px;
 }
 
 #wrap {
@@ -14,7 +15,7 @@ html body {
 }
 
 #cont {
-	background-color: white;
+	background-color: #eef;
 	border: solid 1px black;
 	padding: 10px;
 	margin: 10px;
@@ -45,11 +46,6 @@ p.buttons {
 	margin-bottom: 20px;
 }
 
-.breadcrumbs {
-	margin: 20px 0 10px 0;
-	min-height: 13px;
-}
-
 h1.page-title {
 	display: block;
 	position: relative;
@@ -64,16 +60,21 @@ h1.page-title {
 
 }
 
-.breadcrumbs a, .menu-home a, a.link {
-	color: #4b7399;
-	text-decoration: underline;
-	background-color: transparent;
-	padding: 0 1px 1px 1px;
-	&:hover {
-		color: #fff;
-		text-decoration: none;
-		background-color: #4b7399;
-	}
+.breadcrumbs {
+  color: #6bf;
+  background-color: transparent;
+  padding: 0 1px 1px 1px;
+  margin: 0 0 10px 0;
+  font-size: 16px;
+  a, .menu-home a, a.link {
+    color: black;
+    text-decoration: underline;
+    &:hover {
+    	color: #fff;
+    	text-decoration: none;
+    	background-color: #4b7399;
+    }
+  }
 }
 
 .flash_notice, .flash_alert {
@@ -228,7 +229,7 @@ input.button, button.button {
 }
 
 .loading {
-	background-image: image-url("admin/loading.gif");
+	background-image: image-url("loading.gif");
 	background-position: left center;
 	background-repeat: no-repeat;
 	width: 43px;

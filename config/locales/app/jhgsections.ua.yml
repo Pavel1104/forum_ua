@@ -1,0 +1,14 @@
+# -*- coding: utf-8 -*-
+ua:
+  sections:
+    title:
+      index: "Розділи"
+      new: "Додати розділ"
+      edit: "Редагувати розділ"
+      destroy: "Видалити розділ"
+      destroy_selected: "Видалити вибрані"
+
+  menu:
+    home: "Головна"
+    sections: "Розділи"
+    users: "Користувачі"

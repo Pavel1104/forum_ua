@@ -10,8 +10,8 @@ ForumUa::Application.routes.draw do
       end
     end
   end
-  # root :to => redirect("/sections")
-  root :to => "application#home"
+
+  root :to => "application#index"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

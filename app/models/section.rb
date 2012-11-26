@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 class Section < ActiveRecord::Base
-  self.table_name = "Sections"
+  self.table_name = "sections"
   attr_accessible :title
-  has_many :borads,  :class_name => "Borads",  :foreign_key => :sid, :dependent => :destroy
-  validates :name,
+  # has_many :boards,  :class_name => "Boards",  :foreign_key => :sid, :dependent => :destroy
+  validates :title,
     :presence => true
 
   def self.search(params)
