@@ -33,6 +33,8 @@ class DeviseCreateUsers < ActiveRecord::Migration
       ## Token authenticatable
       # t.string :authentication_token
 
+      ## is admin?
+      t.boolean :is_admin, :null => true, :default => false
 
       t.timestamps
     end

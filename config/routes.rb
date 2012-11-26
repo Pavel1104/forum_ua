@@ -1,6 +1,18 @@
 ForumUa::Application.routes.draw do
   devise_for :users
 
+  resources :sections do
+    delete 'destroy_selected', :on => :collection
+    resources :boards do
+      delete 'destroy_selected', :on => :collection
+      resources :posts do
+        delete 'destroy_selected', :on => :collection
+      end
+    end
+  end
+  # root :to => redirect("/sections")
+  root :to => "application#home"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,48 @@
+
+.flash_notice, .flash_alert {
+	padding: 5px 8px;
+	margin: 10px 0;
+}
+
+.flash_notice {
+	background-color: #E7F8D7;
+	border-top: solid 1px #6C6;
+	border-bottom: solid 1px #6C6;
+	color: #282;
+}
+
+.flash_alert {
+	background-color: #FDD;
+	border-top: solid 1px #C66;
+	border-bottom: solid 1px #C66;
+	color: #811;
+}
+
+.field_with_errors {
+	display: inline;
+
+	.f-input, span.mceEditor table.mceLayout {
+		border: solid 1px #C66 !important;
+	}
+}
+
+#errorExplanation {
+	padding: 0;
+	margin-bottom: 15px;
+	background-color: #FDD;
+	border-top: 1px solid #C66;
+	border-bottom: 1px solid #C66;
+	color: #811;
+
+	ul {
+		margin: 5px 24px;
+
+		li {
+			list-style: disc;
+		}
+	}
+}
+
+.error {
+	color: red;
+}

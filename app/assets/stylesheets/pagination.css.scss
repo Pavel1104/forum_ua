@@ -1,0 +1,51 @@
+.pagination {
+	display: inline-block;
+
+	span, em, a, a:hover {
+		display: inline-block;
+		padding: 2px 4px;
+		border: 1px solid #ccc;
+	}
+
+	span, em {
+		border: 1px solid transparent;
+		&.gap { padding: 1px; }
+		&.disabled { color: #ccc; }
+	}
+
+	a {
+		text-decoration: none;
+		color: #000;
+		background-color: #fff;
+		&:hover {
+			color: #000;
+			background-color: #ebeff5;
+		}
+	}
+}
+
+/* ================================================================ */
+
+.per-page {
+	display: inline-block;
+
+	span, a, a:hover {
+		display: inline-block;
+		padding: 2px 4px;
+		border: 1px solid #ccc;
+	}
+
+	span {
+		border: 1px solid transparent;
+	}
+
+	a {
+		text-decoration: none;
+		color: #000;
+		background-color: #fff;
+		&:hover {
+			color: #000;
+			background-color: #ebeff5;
+		}
+	}
+}

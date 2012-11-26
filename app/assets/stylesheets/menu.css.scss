@@ -1,0 +1,78 @@
+
+/* Horizontal Drop Down Menu */
+
+.menu-h-d {
+  height: 22px;
+  line-height: 16px;
+  border-left: 1px solid #DDD;
+  font-size: 11px;
+}
+.menu-h-d li {
+  float: left;
+  display: block;
+  position: relative;
+  border: 1px solid #DDD;
+  border-width: 1px 1px 1px 0px;
+  list-style: none;
+  min-height: 20px;
+}
+.menu-h-d a, .menu-h-d span {
+  padding: 2px 10px;
+  display: block;
+  color: #4B7399;
+}
+.menu-h-d a {
+  text-decoration: none;
+  &:hover {
+    color: #4B7399;
+    background-color: none;
+    text-decoration: none;
+  }
+}
+
+.menu-h-d ul {
+  display: none;
+  z-index: 1;
+  position: absolute;
+  top: 20px;
+  left: -1px;
+  width: 180px;
+  background: #FFFFFF;
+  border: 0;
+  border-bottom: 1px solid #DDD;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.35);
+}
+.menu-h-d ul ul {
+  left: 100%;
+  top: -1px;
+}
+
+.menu-h-d li li { float: none; border-width: 1px 1px 0px 1px; }
+
+.menu-h-d li:hover   { background: #EBEFF5; }
+.menu-h-d a:hover    { background: #EBEFF5; }
+.menu-h-d span:hover { background: #EBEFF5; }
+
+.menu-h-d li:hover ul ul,
+.menu-h-d li:hover ul li:hover ul ul { display: none; }
+
+.menu-h-d li:hover ul,
+.menu-h-d li:hover ul li:hover ul,
+.menu-h-d li:hover ul li:hover ul li:hover ul { display: block; }
+
+.menu-home { margin-left: 10px; font-size: 11px; line-height: 1.5; }
+.menu-home ul { margin-left: 15px; }
+.menu-home li {
+  list-style: none;
+  background: image-url("admin/bullet.gif") no-repeat scroll 0 0.5em transparent;
+  padding-left: 10px;
+}
+
+.menu-home li {
+  a, span {
+    text-decoration: none;
+    font-size: 15px;
+    color: yellow;
+    font-weight: bold;
+  }
+}
