@@ -8,12 +8,6 @@
       = f.text_field :title, :class => "f-input"
     - unless @item.new_record?
       %hr.separator/
-      .row
-        %span.caption
-          = f.caption :boards_count
-          \:
-        / = link_to t("boards.count", :count => @item.boards_count), { :controller => :boards, :item_id => @item }, :class => "link"
-      %hr.separator/
       .f-row
         %span.caption
           = f.caption :created_at
@@ -27,8 +21,8 @@
     .f-row
       %span.fl
         = f.submit t("common.buttons.save"), :class => "button"
-        = link_to t("common.buttons.cancel"), "javascript:;", :class => "button", :onclick => "UI.Sections.closeForm();"
+        = link_to t("common.buttons.cancel"), sections_path, :class => "button"
       - unless @item.new_record?
-        %span.fr
-          = link_to t("common.buttons.destroy"), "javascript:;", :class => "button red", :onclick => "UI.Sections.destroy('#{url_for(:action => :destroy, :id => @item)}');"
+        %span.fl
+          = link_to t("sections.title.destroy"), section_path(@item), :confirm => t("common.messages.are_you_sure"), :method => :delete, :class => "button red"
       %span.cc

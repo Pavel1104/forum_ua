@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 class ApplicationController < ActionController::Base
-  before_filter :set_page_title,  :only => :index
+  before_filter :set_page_title
   helper :all
   protect_from_forgery
 

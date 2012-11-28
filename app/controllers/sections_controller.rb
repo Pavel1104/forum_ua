@@ -1,32 +1,30 @@
 # -*- coding: utf-8 -*-
 class SectionsController < ApplicationController
-  before_filter :set_breadcrumbs, :only => :index
+  before_filter :set_breadcrumbs
   before_filter :find_item, :only => [:show, :edit, :update, :destroy]
 
   def index
     @fields = resource_class::FIELDS_FOR_LIST.dup
     @collection = resource_class.
-    search(params).
     order(ready_order_params)
+    @sections = Section.all
   end
 
   def new
     @item = resource_class.new
-    render :layout => false
   end
 
   def create
     @item = resource_class.new(params[:item])
     @success = @item.save
+    redirect_to Section if @success
   end
 
   def show
-    edit
-    render :edit
+    @boards = @item.boards
   end
 
   def edit
-    render :layout => false
   end
 
   def update
@@ -35,11 +33,7 @@ class SectionsController < ApplicationController
 
   def destroy
     @item.destroy
-  end
-
-  def destroy_selected
-    @items = resource_class.where(:id => params[:id])
-    @items.each(&:destroy)
+    redirect_to Section
   end
 
 

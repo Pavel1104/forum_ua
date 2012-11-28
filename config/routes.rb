@@ -2,11 +2,8 @@ ForumUa::Application.routes.draw do
   devise_for :users
 
   resources :sections do
-    delete 'destroy_selected', :on => :collection
     resources :boards do
-      delete 'destroy_selected', :on => :collection
       resources :posts do
-        delete 'destroy_selected', :on => :collection
       end
     end
   end

@@ -3,12 +3,7 @@ ua:
   section:
     buttons:
       new: "Додати розділ"
-    count:
-      zero: "%{count} розділів"
-      one: "%{count} розділ"
-      few: "%{count} розділи"
-      many: "%{count} розділів"
-      other: "%{count} розділи"
+    are_you_sure: "Ви впевнені"
   activerecord:
     attributes:
       "section":

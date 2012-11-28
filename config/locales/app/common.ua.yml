@@ -1,12 +1,5 @@
 # -*- coding: utf-8 -*-
 ua:
-  paginate:
-    page_entries_info:
-      zero: "Розділи відсутні"
-      one: "Розділи: %{from} - %{to} з %{count}"
-      few: "Розділи: %{from} - %{to} з %{count}"
-      many: "Розділи: %{from} - %{to} з %{count}"
-      other: "Розділи: %{from} - %{to} з %{count}"
 
   menu:
     home: "Головна"
@@ -21,39 +14,20 @@ ua:
     title:
       home: "Головна"
     buttons:
-      save: "Сохранить"
+      save: "Зберегти"
       ok: "Ok"
       b_yes: "Да"
       b_no: "Нет"
       search: "Поиск"
       reset: "Сбросить"
-      cancel: "Отменить"
-      destroy: "Удалить"
+      cancel: "Відмінити"
+      destroy: "Видалити"
       back: "Назад"
-      next: "Далее"
+      next: "Далі"
       enter: "Войти"
-      close: "Закрыть"
-      send: "Отправить"
-      select_all: "Выбрать все"
-      actions: "Действия"
-      view: "Просмотр"
-      edit: "Редактировать"
-      upload: "Загрузить"
-      destroy_selected: "Удалить выбранные"
-      import: "Импорт"
-      export_selected: "Экспортировать выбранные"
-      export_all: "Экспортировать все"
+      close: "Закрити"
     values:
-      b_yes: "Да"
-      b_no: "Нет"
-      b_on: "Вкл."
-      b_off: "Выкл."
-      none: "Нет"
-    labels:
-      search: "Поиск"
-      pages: "Страницы"
-      per_page: "Записей на странце"
-      city: "Город"
+      b_yes: "Так"
+      b_no: "Ні"
     messages:
-      no_items_found: "Записей не найдено"
-      are_you_sure: "Вы уверены?"
+      are_you_sure: "Ви впевнені"

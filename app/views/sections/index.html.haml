@@ -1,8 +1,10 @@
 = render "/shared/top"
-%p
-  %b= icon_link "add", t("buttons.new", :scope => resource_class.model_name.singular), nil, :onclick => "UI.Sections.form('0', '#{url_for(:action => :new)}');"
-#sections-list
-  = render "table"
-:javascript
-  UI.Sections.url_list =  "#{url_for(:controller => 'sections', :action => :index)}";
-  UI.Sections.url_destroy_selected = "#{url_for(:controller => 'sections', :action => :destroy_selected)}";
+.add_section
+  = link_to t("sections.title.new"), new_section_path
+#sections_list
+  - @sections.each do |section|
+    %p.item
+      %label.item= link_to section.title, section
+      %label.link-icon-text.silk_pencil.fl= link_to t("sections.title.edit"), edit_section_path(section)
+      %label.link-icon-text.silk_delete.fl= link_to t("sections.title.destroy"), section, :confirm => t("common.messages.are_you_sure"), :method => :delete
+      .cc
