@@ -1,0 +1,12 @@
+# -*- coding: utf-8 -*-
+ua:
+  board:
+    buttons:
+      new: "Додати дошку"
+    are_you_sure: "Ви впевнені"
+  activerecord:
+    attributes:
+      "board":
+        title: "Назва"
+        created_at: "Створена"
+        updated_at: "Обновлена"

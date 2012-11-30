@@ -1,0 +1,31 @@
+= form_for @item, :as => :item, :url => url, :remote => true do |f|
+  = render "/shared/errors", :errors => @item.errors.full_messages
+  .form-cont
+    .f-row
+      %span.caption
+        = f.caption :title, true
+        \:
+      = f.text_field :title, :class => "f-input"
+    - unless @item.new_record?
+      .f-row
+        %span.caption
+          = f.caption :created_at
+          \:
+        = l(@item.created_at, :format => :date) rescue nil
+      .f-row
+        %span.caption
+          = f.caption :updated_at
+          \:
+        = l(@item.updated_at, :format => :date) rescue nil
+    .f-row
+      %span.fl
+        = f.submit t("common.buttons.save"), :class => "button"
+        = link_to t("common.buttons.cancel"), section_path(@parent_item), :class => "button"
+      - unless @item.new_record?
+        %span.fr
+          = link_to t("common.buttons.destroy"), section_path(@item), :confirm => t("common.messages.are_you_sure"), :method => :delete, :class => "button red"
+      %span.cc
+    %p
+      = @item.to_s
+%div.debug
+  = debug(params) if Rails.env.development?

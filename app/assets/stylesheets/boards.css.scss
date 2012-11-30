@@ -1,0 +1,18 @@
+// Place all the styles related to the Boards controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.add_board {
+  margin: 17px;
+  a {
+  text-decoration: none;
+  }
+}
+
+
+label.item {
+  margin: 5px 0 5px 15px;
+  font-size: 20px;
+  a {
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,13 @@
+= render "/shared/top"
+#section_name
+  hello world
+/   = link_to @item.title, @item
+/ .add_board
+/   = link_to t("boards.title.new"), new_section_board_path(@item)
+/ #boards_list
+/   - @item.boards.each do |board|
+/     %p.item
+/       %label.item= link_to board.title, 'section_board_path'
+/       %label.link-icon-text.silk_pencil.fl.link-icon-text.silk_pencil.fl= link_to t("boards.title.edit"), edit_section_board_path(@item)
+/       %label.link-icon-text.silk_delete.fl= link_to t("boards.title.destroy"), section_board_path(@item), :confirm => t("common.messages.are_you_sure"), :method => :delete
+/       .cc

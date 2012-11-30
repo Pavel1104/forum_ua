@@ -1,0 +1,15 @@
+# -*- coding: utf-8 -*-
+ua:
+  boards:
+    title:
+      index: "Дошки"
+      new: "Додати дошку"
+      edit: "Редагувати"
+      destroy: "Видалити"
+      show: "Переглянути розділ"
+
+  menu:
+    home: "Головна"
+    boards: "Розділи"
+    users: "Користувачі"
+
