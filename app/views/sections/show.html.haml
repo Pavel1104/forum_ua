@@ -6,7 +6,7 @@
 #boards_list
   - @item.boards.each do |board|
     %p.item
-      %label.item= link_to board.title, 'section_board_path'
-      %label.link-icon-text.silk_pencil.fl.link-icon-text.silk_pencil.fl= link_to t("boards.title.edit"), edit_section_board_path(@item)
-      %label.link-icon-text.silk_delete.fl= link_to t("boards.title.destroy"), section_board_path(@item), :confirm => t("common.messages.are_you_sure"), :method => :delete
+      %label.item= link_to board.title, section_board_path(@item, board)
+      %label.link-icon-text.silk_pencil.fl.link-icon-text.silk_pencil.fl= link_to t("boards.title.edit"), edit_section_board_path(@item, board)
+      %label.link-icon-text.silk_delete.fl= link_to t("boards.title.destroy"), section_board_path(@item, board), :confirm => t("common.messages.are_you_sure"), :method => :delete
       .cc

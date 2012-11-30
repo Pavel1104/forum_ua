@@ -52,12 +52,6 @@ class ApplicationController < ActionController::Base
     "#{order_params[:column]} #{order_params[:direction]}"
   end
 
-  def set_breadcrumbs
-    @breadcrumbs = []
-    @breadcrumbs << { :name => t("home", :scope => ["common", "title"]), :href => root_path }
-    @breadcrumbs << { :name => t("index", :scope => [params[:controller], "title"]), :href => { :action => :index } }
-  end
-
   def set_page_title
     @page_title = t(params[:action], :scope => [params[:controller], "title"])
   end

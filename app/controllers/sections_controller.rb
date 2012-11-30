@@ -1,12 +1,9 @@
 # -*- coding: utf-8 -*-
 class SectionsController < ApplicationController
-  before_filter :set_breadcrumbs
   before_filter :find_item, :only => [:show, :edit, :update, :destroy]
+  before_filter :set_breadcrumbs
 
   def index
-    @fields = resource_class::FIELDS_FOR_LIST.dup
-    @collection = resource_class.
-    order(ready_order_params)
     @sections = Section.all
   end
 
@@ -17,7 +14,7 @@ class SectionsController < ApplicationController
   def create
     @item = resource_class.new(params[:item])
     @success = @item.save
-    redirect_to Section if @success
+    redirect_to Section
   end
 
   def show
@@ -29,6 +26,7 @@ class SectionsController < ApplicationController
 
   def update
     @success = @item.update_attributes(params[:item])
+    redirect_to Section
   end
 
   def destroy
@@ -50,6 +48,13 @@ class SectionsController < ApplicationController
 
   def default_order_params
     [:created_at, :desc]
+  end
+
+  def set_breadcrumbs
+    @breadcrumbs = []
+    @breadcrumbs << { :name => t("home", :scope => ["common", "title"]), :href => root_path }
+    @breadcrumbs << { :name => t("index", :scope => [params[:controller], "title"]), :href => sections_path }
+    @breadcrumbs << { :name => @item.title, :href => section_path(@item) } if @item
   end
 
 end

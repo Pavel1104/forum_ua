@@ -1,5 +1,0 @@
-- if @success
-  UI.Sections.refreshList();
-  UI.Sections.closeForm();
-- else
-  UI.Sections.cont_form.html("#{j(render 'form', :url => { :action => :update, :id => @item.id })}");
