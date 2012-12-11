@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 ua:
-  boards:
+  threads:
     title:
-      index: "Дошки"
-      new: "Додати дошку"
+      index: "Теми"
+      new: "Додати тему"
       edit: "Редагувати"
       destroy: "Видалити"
-      show: "Переглянути дошку"
+      show: "Переглянути тему"
 
   menu:
     home: "Головна"

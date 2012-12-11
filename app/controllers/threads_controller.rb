@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
-class BoardsController < ApplicationController
+class ThreadsController < ApplicationController
+
   before_filter :find_parent_item
   before_filter :find_item, :only => [:show, :edit, :update, :destroy]
   before_filter :set_breadcrumbs
 
   def index
-    @boards = Board.all
+    @threads = Threads.all
   end
 
   def new
@@ -15,7 +16,7 @@ class BoardsController < ApplicationController
   def create
     @item = parent_resource_scope.new(params[:item])
     @success = @item.save
-    redirect_to section_board_path(@parent_item) if @success
+    redirect_to section_board_thread_path(@parent_item, @item) if @success
   end
 
   def show
@@ -27,7 +28,7 @@ class BoardsController < ApplicationController
 
   def update
     @success = @item.update_attributes(params[:item])
-    redirect_to section_board_path(@parent_item)
+    # redirect_to section_board_path(@parent_item)
      # if @success
   end
 
@@ -41,20 +42,19 @@ class BoardsController < ApplicationController
 
   def find_item
     @item = parent_resource_scope.find(params[:id])
-    @item1 = Board.find(params[:id])
   end
 
   def find_parent_item
-    @parent_item = Section.find(params[:section_id])
+    @parent_item = Board.find(params[:board_id])
   end
 
   def resource_class
-    Board
+    Thread
   end
   helper_method :resource_class
 
   def parent_resource_scope
-    @parent_item.boards
+    @parent_item.threads
   end
 
   def default_order_params

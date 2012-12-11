@@ -1,0 +1,10 @@
+= render "/shared/top"
+.section_name
+  = link_to t("sections.title.new"), sections_path
+#sections_list
+  - @sections.each do |section|
+    %p.item
+      %label.item= link_to section.title, section_board_path(section)
+      %label.link-icon-text.silk_pencil.fl= link_to t("sections.title.edit"), edit_section_path(section)
+      %label.link-icon-text.silk_delete.fl= link_to t("sections.title.destroy"), section, :confirm => t("common.messages.are_you_sure"), :method => :delete
+      .cc

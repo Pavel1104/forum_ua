@@ -3,7 +3,9 @@ ForumUa::Application.routes.draw do
 
   resources :sections do
     resources :boards do
-      resources :posts do
+      resources :threads do
+        resources :posts do
+        end
       end
     end
   end

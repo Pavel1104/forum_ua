@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121126203717) do
+ActiveRecord::Schema.define(:version => 20121202221304) do
 
   create_table "boards", :force => true do |t|
     t.integer  "sid"
@@ -20,7 +20,23 @@ ActiveRecord::Schema.define(:version => 20121126203717) do
     t.datetime "updated_at", :null => false
   end
 
+  create_table "posts", :force => true do |t|
+    t.integer  "tid"
+    t.text     "text"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
   create_table "sections", :force => true do |t|
+    t.string   "title"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "master_price"
+    t.integer  "sales_price"
+  end
+
+  create_table "threads", :force => true do |t|
+    t.integer  "bid"
     t.string   "title"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false

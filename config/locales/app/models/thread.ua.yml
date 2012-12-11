@@ -1,0 +1,11 @@
+# -*- coding: utf-8 -*-
+ua:
+  thread:
+    buttons:
+      new: "Додати тему"
+  activerecord:
+    attributes:
+      "thread":
+        title: "Назва"
+        created_at: "Створена"
+        updated_at: "Обновлена"

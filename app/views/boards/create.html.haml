@@ -1,6 +1,0 @@
-- if @success
-  UI.Boards.refreshList();
-  UI.Boards.closeForm();
-- else
-  UI.Boards.cont_form.html("#{j(render 'form', :url => { :action => :create })}");
-- end
